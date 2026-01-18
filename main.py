@@ -83,5 +83,5 @@ def parse_website(url):
 # Запускаем функцию парсинга
 if __name__ == "__main__":
 
-    url='https://izgr.ru/?mod=boards&page=single&id=77223'
+    url='https://izgr.ru/?mod=boards&page=single&id=1441262'
     data = parse_website(url)

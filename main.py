@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup  # Для парсинга HTML-страниц
 import re  # Для работы с регулярными выражениями (очистка текста)
 
 
-def parse_website():
+def parse_website(url):
     """
     Основная функция для парсинга веб-страницы.
     Извлекает данные из таблицы и сохраняет в словарь.
@@ -17,7 +17,7 @@ def parse_website():
         # 1. Отправляем GET-запрос к целевой странице
         print("Отправка запроса к серверу...")
         response = requests.get(
-            'https://izgr.ru/?mod=boards&page=single&id=77223',
+            url,
             timeout=10  # Максимальное время ожидания ответа
         )
 
@@ -82,4 +82,6 @@ def parse_website():
 
 # Запускаем функцию парсинга
 if __name__ == "__main__":
-    data = parse_website()
+
+    url='https://izgr.ru/?mod=boards&page=single&id=77223'
+    data = parse_website(url)
